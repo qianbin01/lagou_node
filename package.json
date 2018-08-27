@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon  index.js",
-    "start": "cross-env NODE_ENV=production  pm2  index.js"
+    "start": "cross-env NODE_ENV=production  pm2  start index.js"
   },
   "keywords": [
     "lagou",
-    "api"
+    "api",
+    "node"
   ],
   "author": "qianbin",
   "license": "MIT",
