@@ -1,0 +1,32 @@
+{
+  "name": "lagou_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev nodemon  index.js",
+    "start": "cross-env NODE_ENV=production  pm2  index.js"
+  },
+  "keywords": [
+    "lagou",
+    "api"
+  ],
+  "author": "qianbin",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "cross-env": "^5.2.0"
+  }
+}
