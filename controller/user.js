@@ -11,6 +11,7 @@ class User extends BaseController {
     };
 
     async register(req, res, next) {
+        console.log(req.body);
         await console.log(next);
         res.send({
             status: 200,
