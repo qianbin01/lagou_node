@@ -6,7 +6,7 @@ export default class BaseController {
         this.BASE_URL = config.BASE_URL;
     }
 
-    async fetch(url = '', data = {}, type = 'GET', resType = 'JSON') {
+    async myFetch(url = '', data = {}, type = 'GET', resType = 'JSON') {
         type = type.toUpperCase();
         resType = resType.toUpperCase();
         if (type === 'GET') {

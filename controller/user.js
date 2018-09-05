@@ -1,22 +1,18 @@
 import BaseController from './baseController'
 
 class User extends BaseController {
+    constructor() {
+        super();
+        this.login = this.login.bind(this);//绑定this,否则会导致undifined
+        this.register = this.register.bind(this);//绑定this,否则会导致undifined
+    }
 
-    async login(req, res, next) {
-        await console.log(next);
-        res.send({
-            status: 200,
-            message: '登录成功',
-        })
+    async login(req, res) {
+        await res.send('123');
     };
 
-    async register(req, res, next) {
-        console.log(req.body);
-        await console.log(next);
-        res.send({
-            status: 200,
-            message: '注册成功',
-        })
+    async register(req, res) {
+        await res.send('123');
     }
 }
 
