@@ -19,7 +19,8 @@
     "cookie-parser": "^1.4.3",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
-    "node-fetch": "^2.2.0"
+    "node-fetch": "^2.2.0",
+    "sqlite3": "^4.0.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

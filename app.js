@@ -12,7 +12,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json({}));
 app.use(cookieParser());
 // app.use(session({}));
+
 router(app);
+
+
+
 app.listen(config.PORT, function () {
     console.log(`service start on ${config.PORT}`)
 });

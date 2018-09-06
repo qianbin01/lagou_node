@@ -7,8 +7,30 @@ import Recruit from '../controller/recruit'
 import Topic from '../controller/topic'
 import CommentUser from '../controller/commentUser'
 import User from '../controller/user'
+import dbController from '../db'
 
 const router = express.Router();
+
+router.all('*', (req, res, next) => {
+    let url = req.params[0];
+    if ('/user/login' === url) {
+        //这里不验证头部
+        next()
+    } else {
+        //这里验证头部
+        if (req.headers['qb_auth']) {
+            dbController.checkAuth(req.headers['qb_auth']).then(() => {
+                next();
+            }).catch(() => {
+                res.json({msg: '验证失败,求求你重新走一下登录吧', code: 1001});
+                return false
+            });
+        } else {
+            res.json({msg: '验证失败,求求你重新走一下登录吧', code: 1001});
+            return false
+        }
+    }
+});
 
 //文章
 router.get('/article/list', Article.list);
@@ -37,8 +59,7 @@ router.get('/topic/single', Topic.single);
 router.get('/comment_users/list', CommentUser.list);
 
 //用户
-router.get('/user/login', User.login);
-router.post('/user/register', User.register);
+router.post('/user/login', User.login);
 
 
 export default router
