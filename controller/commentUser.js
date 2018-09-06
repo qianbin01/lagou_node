@@ -1,6 +1,6 @@
 import BaseController from './baseController'
 
-class Comment extends BaseController {
+class CommentUser extends BaseController {
     constructor() {
         super();
         this.list = this.list.bind(this);//绑定this,否则会导致undifined
@@ -8,10 +8,11 @@ class Comment extends BaseController {
 
     async list(req, res) {
         let aid = req.query.aid;
-        let result = await this.myFetch('/comment/lists', {aid: aid});
+        let result = await this.myFetch('/comment_users/lists', {aid: aid});
         await res.send(result);
     };
 
+
 }
 
-export default new Comment();
+export default new CommentUser();

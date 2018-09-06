@@ -1,6 +1,6 @@
 import BaseController from './baseController'
 
-class Article extends BaseController {
+class Topic extends BaseController {
     constructor() {
         super();
         this.list = this.list.bind(this);//绑定this,否则会导致undifined
@@ -9,15 +9,15 @@ class Article extends BaseController {
 
     async list(req, res) {
         let page = req.query.page;
-        let result = await this.myFetch('/article/lists', {page: page});
+        let result = await this.myFetch('/topic/lists', {page: page});
         await res.send(result);
     };
 
     async single(req, res) {
-        let aid = req.query.aid;
-        let result = await this.myFetch('/article/single', {aid: aid});
+        let tid = req.query.tid;
+        let result = await this.myFetch('/topic/single', {tid: tid});
         await res.send(result);
     }
 }
 
-export default new Article();
+export default new Topic();

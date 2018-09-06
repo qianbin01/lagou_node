@@ -3,7 +3,7 @@ import config from '../config'
 
 export default class BaseController {
     constructor() {
-        this.BASE_URL = config.BASE_URL;
+        this.BASE_URL = config.API_HOST;
     }
 
     async myFetch(url = '', data = {}, type = 'GET', resType = 'JSON') {
